@@ -1,6 +1,7 @@
 let commitHash, pollingTime, versionUrl
-function checkUpdate() {
-    fetch(versionUrl + '?time=' + new Date().getTime(), {
+function checkUpdate() {i
+    console.log(window.location)
+    fetch('location:3000/' + versionUrl + '?time=' + new Date().getTime(), {
         method: 'GET',
     })
         .then((response) => response.text())
@@ -17,7 +18,6 @@ function checkUpdate() {
 // 监听消息
 onmessage = function (e) {
     if (e.data.type === 'VERSION' && e.data.hash) {
-        console.log(e.data)
         pollingTime = e.data.pollingTime
         commitHash = e.data.hash
         versionUrl = e.data.versionUrl
