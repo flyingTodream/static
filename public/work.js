@@ -1,6 +1,5 @@
 let commitHash, pollingTime, versionUrl
 function checkUpdate() {
-    console.log(window.location)
     fetch('location:3000/' + versionUrl + '?time=' + new Date().getTime(), {
         method: 'GET',
     })
