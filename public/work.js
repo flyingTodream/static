@@ -1,6 +1,6 @@
 let commitHash, pollingTime, versionUrl
 function checkUpdate() {
-    fetch('location:3000/' + versionUrl + '?time=' + new Date().getTime(), {
+    fetch('localhost:3000/' + versionUrl + '?time=' + new Date().getTime(), {
         method: 'GET',
     })
         .then((response) => response.text())
