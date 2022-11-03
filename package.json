@@ -1,16 +1,22 @@
 {
-  "name": "static",
+  "name": "vite-project",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.25"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.0.0",
-    "vite": "^2.7.2"
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.2.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0"
   }
 }
