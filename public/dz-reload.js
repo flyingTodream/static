@@ -15,9 +15,6 @@ function checkUpdate() {
 
 // 监听消息\n' +
 onmessage = function (e) {
-    if(!currentHash){
-        postMessage('cancel')
-    }
     pollingTime = e.data.pollingTime
     location = e.data.location
     currentHash = e.data.currentHash
