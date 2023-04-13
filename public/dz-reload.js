@@ -15,12 +15,15 @@ function checkUpdate() {
 
 // 监听消息\n' +
 onmessage = function (e) {
-        pollingTime = e.data.pollingTime
-        location = e.data.location
-        currentHash = e.data.currentHash
-        setInterval(() => {
-            checkUpdate()
-        }, pollingTime * 1000)
+    if(!currentHash){
+        postMessage('cancel')
+    }
+    pollingTime = e.data.pollingTime
+    location = e.data.location
+    currentHash = e.data.currentHash
+    setInterval(() => {
+        checkUpdate()
+    }, pollingTime * 1000)
 }
 
 function getCurrentHash(htmlObj) {
